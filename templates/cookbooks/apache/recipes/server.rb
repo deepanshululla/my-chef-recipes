@@ -9,13 +9,12 @@ package 'httpd' do
    action:install
 end
 
-file '/var/www/html/index.html' do
-   content "<h2>Hello world</h2>
-  <p> IP address: #{node['ipaddress']} </p>
-
-  <p> MAC address: #{node['macaddress']} </p>
-
-"
+template '/var/www/html/index.html' do
+  source 'index.html.erb'
+  variables({
+    :name => 'Deepanshu Lulla'
+  })
+  action :create
 end
 
 service 'httpd' do

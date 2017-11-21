@@ -21,6 +21,9 @@ puts "The ip address is #{node['ipaddress']}"
 
 template '/etc/motd' do
   source 'motd.erb'
+  variables(
+     :name => 'Deepanshu Lulla'
+  )
   owner 'root'
   group 'root'
   action :create
