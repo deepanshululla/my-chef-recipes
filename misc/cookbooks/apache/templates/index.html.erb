@@ -1,0 +1,7 @@
+
+ This is index.html template created by <%= @name %>
+<p> HOSTNAME: <%= node['hostname'] %> </p>
+<p> IP ADDRESS: <%= node['ipaddress'] %> </p>
+<p> MAC Address: <%= node['macaddress'] %> </p>
+<p> CPU:  <%= node['cpu']['0']['mhz'] %> </p>
+<p> MEMORY:  <%= node['memory']['total'] %> </p>
